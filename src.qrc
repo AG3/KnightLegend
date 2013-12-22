@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Penguins.jpg</file>
+        <file>Img/castle.png</file>
+        <file>Img/ground.png</file>
+        <file>Img/market.png</file>
+        <file>Img/chat.png</file>
+        <file>Img/chat_down.png</file>
+        <file>Img/map.png</file>
+        <file>Img/map_down.png</file>
+        <file>Img/rank.png</file>
+        <file>Img/rank_down.png</file>
+        <file>Img/setting.png</file>
+        <file>Img/setting_down.png</file>
+        <file>Img/shop.png</file>
+        <file>Img/shop_down.png</file>
+        <file>Img/mail.png</file>
+        <file>Img/mail_down.png</file>
+        <file>Img/bg_button.png</file>
+    </qresource>
+</RCC>

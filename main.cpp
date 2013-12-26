@@ -2,7 +2,7 @@
 #include"father.h"
 #include"QDebug"
 #include"QTextCodec"
-#include"QDeclarativeComponent"
+//#include"QDeclarativeComponent"
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);

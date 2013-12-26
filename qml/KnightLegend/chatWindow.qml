@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import "D:/KnightLegend/KnightLegend/qml/KnightLegend/main.qml"
+import "main.qml"
 
 Rectangle
 {

@@ -5,7 +5,7 @@ father::father(QObject *parent) :
     QObject(parent)
 {
     client=new QTcpSocket();
-    client->connectToHost("127.0.0.1",8525);
+    client->connectToHost("192.168.1.55",8525);
     connect(this->client,SIGNAL(readyRead()),this,SLOT(msgChecker()));
     msgCount=0;
 }

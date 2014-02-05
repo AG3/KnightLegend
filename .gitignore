@@ -218,3 +218,5 @@ pip-log.txt
 ## Qt
 #############
 *.pro.user
+*.png
+*.psd

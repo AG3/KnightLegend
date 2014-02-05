@@ -12,6 +12,7 @@ Item
     property int oldy
     property int fwidth:father.width
     property int fheight:father.height
+    property int senceHeight:(father.height/4)*3
 
     hudButtonS:((father.height/4)/10)*8
     space:(father.width-father.height)/6
@@ -36,6 +37,16 @@ Item
         visible: false
         z: 2
         source: "./worldMap.qml"
+    }
+
+    Loader
+    {
+        id:castlePanelLoader
+        x:fwidth/5
+        y:0
+        visible: false
+        z: 2
+        source: "./castlePanel.qml"
     }
     //*************Loader-End******************
 
@@ -97,7 +108,7 @@ Item
             anchors.fill: castle
             onClicked:
             {
-                //console.log("castle Clicked")
+                castlePanelLoader.visible=!castlePanelLoader.visible
             }
         }
     }
@@ -109,6 +120,7 @@ Item
         width: father.width
         height: father.height/4
         color: "transparent"
+        z:10
         Image {
             anchors.fill: parent
             source: "qrc:Img/bg_button.png"
@@ -121,6 +133,7 @@ Item
         id: chat
         y:(father.height/4)*3+(father.height/4)/10
         x: space
+        z:11
         width:hudButtonS
         height: hudButtonS
         color:"Transparent"
@@ -157,6 +170,7 @@ Item
         x: space*2+hudButtonS
         width:hudButtonS
         height: hudButtonS
+        z:11
         color:"Transparent"
         Image
         {
@@ -189,6 +203,7 @@ Item
         id: rank
         y:(father.height/4)*3+(father.height/4)/10
         x: space*3+hudButtonS*2
+        z:11
         width:hudButtonS
         height: hudButtonS
         color:"Transparent"
@@ -223,6 +238,7 @@ Item
         id: shop
         y:(father.height/4)*3+(father.height/4)/10
         x: space*4+hudButtonS*3
+        z:11
         width:hudButtonS
         height: hudButtonS
         color:"Transparent"
@@ -257,6 +273,7 @@ Item
         id: setting
         y:(father.height/4)*3+(father.height/4)/10
         x: space*5+hudButtonS*4
+        z:11
         width:hudButtonS
         height: hudButtonS
         color:"Transparent"
@@ -298,7 +315,7 @@ Item
         color: "Red"
         Text
         {
-            text: qsTr("text")
+            text: "text"
             anchors.centerIn: parent
         }
     }
@@ -313,7 +330,7 @@ Item
         color: "Black"
         Text
         {
-            text: qsTr("text")
+            text: "text"
             anchors.centerIn: parent
         }
     }

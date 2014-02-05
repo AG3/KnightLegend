@@ -1,27 +1,26 @@
 import QtQuick 2.0
-import "main.qml"
+import "./"
 
 Rectangle
 {
     id:cw
-
-
     height: (fheight/4)*3
-
-
     ListView
     {
         id:chat
         width: (fwidth/3)*2
         height: cw.height-50
         model:chatlist
-        delegate: Rectangle{
-            height: 50;
-            width:200;
-            Text {
-            text: modelData
+        delegate:
+            Rectangle
+            {
+                height: 50
+                width:200
+                Text
+                {
+                    text: modelData
+                }
             }
-        }
 
         Image//Background
         {
@@ -48,7 +47,7 @@ Rectangle
             anchors.fill: parent
             onClicked:
             {
-                commander.sendMsg(input.text)
+                commander.sendMsg("chat,"+input.text)
                 input.text=""
             }
         }

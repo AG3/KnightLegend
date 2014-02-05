@@ -11,18 +11,14 @@ father::father(QObject *parent) :
 }
 
 
-void father::sendMsg(QString msgText)
+void father::sendMsg(QString msgText)//发送信息(于QML中添加协议头！)
 {
+    qDebug()<<msgText;
     QByteArray buffer;
-    //qDebug()<<msgText.toUtf8()<<msgText.toUtf8().size();
-    buffer.append("chat,");
     buffer.append(msgText.toUtf8());
     client->write(buffer.constData(),buffer.size());
-    client->waitForBytesWritten(5000);
+    client->waitForBytesWritten(2000);
     buffer.clear();
-    /*msgList.append(msgText);
-    msgCount++;
-    ctxt->setContextProperty("chatlist",msgList);*/
     return;
 }
 
@@ -38,9 +34,30 @@ void father::msgChecker()
         msgList.append(cmd);
         ctxt->setContextProperty("chatlist",msgList);
     }
+    else if(type=="up")
+    {
+
+    }
 }
 
 int father::getMsgCount()
 {
     return msgCount;
+}
+
+void father::askWorldMap()
+{
+    /*
+     *Ask serverSide's world map, download them all, refresh the map to QML
+     */
+}
+
+int father::getChunkColor(int x, int y)
+{
+    return mapColor[x][y];
+}
+
+int father::getChunkUID(int x, int y)
+{
+    return mapPlayer[x][y];
 }

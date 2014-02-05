@@ -7,7 +7,7 @@
 #include"QStringList"
 #include"QTcpSocket"
 #include"QByteArray"
-#include"QDeclarativeEngine"
+
 
 class father : public QObject
 {
@@ -17,12 +17,17 @@ public:
     QStringList msgList;
     QQmlContext *ctxt;
     QTcpSocket *client;
+
+    int mapColor[256][256],mapPlayer[256][256];
     int msgCount;
 
 public slots:
     void sendMsg(QString msgText);
     void msgChecker();
+    void askWorldMap();
     int getMsgCount();
+    int getChunkColor(int x,int y);
+    int getChunkUID(int x,int y);
 
 private:
 

@@ -1,8 +1,59 @@
 import QtQuick 2.0
-import "D:/KnightLegend/KnightLegend/qml/KnightLegend/main.qml"
-Rectangle
+import "./"
+
+Item
 {
+
     width: fwidth
-    height: (fheight/4)*3
-    color:"black"
+    height: senceHeight
+    //color:"black"
+    property int oldx
+    property int oldy
+    property int i
+    property int j
+    Image
+    {
+        //anchors.fill: parent
+        width:fwidth*10
+        height: fheight*10
+        id: worldMap
+        source: "../../Img/worldMap.png"
+        Component.onCompleted:
+        {
+            commander.askWorldMap()
+            for(i=0;i<10;i++)
+            {
+                for(j=0;j<10;j++)
+                {
+                    //commander.getChunkColor(i,j)
+                }
+            }
+        }
+
+        MouseArea
+        {
+            anchors.fill: parent
+            id:mousearea
+            onPositionChanged:
+            {
+                if((worldMap.x+mousearea.mouseX-oldx)>=(fwidth*-9) &&
+                        (worldMap.x+mousearea.mouseX-oldx)<=0)
+                {
+                    worldMap.x+=mousearea.mouseX-oldx
+                }
+
+                if((worldMap.y+mousearea.mouseY-oldy)>=(fheight*-9) &&
+                        (worldMap.y+mousearea.mouseY-oldy)<=0)
+                {
+                    worldMap.y+=mousearea.mouseY-oldy
+                }
+            }
+            onPressed:
+            {
+                oldx=mousearea.mouseX
+                oldy=mousearea.mouseY
+            }
+        }
+    }
+    //MouseArea{anchors.fill: parent}
 }

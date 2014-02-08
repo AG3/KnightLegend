@@ -11,7 +11,7 @@ father::father(QObject *parent) :
 }
 
 
-void father::sendMsg(QString msgText)//发送信息(于QML中添加协议头！)
+void father::sendMsg(QString msgText)//发送信息(QML只传递命令,ID在这里加)
 {
     qDebug()<<msgText;
     QByteArray buffer;
@@ -60,4 +60,8 @@ int father::getChunkColor(int x, int y)
 int father::getChunkUID(int x, int y)
 {
     return mapPlayer[x][y];
+}
+void father::login(QString cmd)
+{
+    //
 }

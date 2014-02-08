@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     root->ctxt=viewer.rootContext();
     root->ctxt->setContextProperty("commander",root);
     root->ctxt->setContextProperty("chatlist",root->msgList);
-    viewer.setMainQmlFile(QStringLiteral("qml/KnightLegend/main.qml"));
+    viewer.setMainQmlFile(QStringLiteral("qml/KnightLegend/login.qml"));
     viewer.show();
 
     return app.exec();

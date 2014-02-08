@@ -1,9 +1,7 @@
 import QtQuick 2.0
 import "./"
-
 Item
 {
-
     width: fwidth
     height: senceHeight
     //color:"black"
@@ -13,19 +11,22 @@ Item
     property int j
     Image
     {
+        z:1
         //anchors.fill: parent
         width:fwidth*10
         height: fheight*10
         id: worldMap
+
         source: "../../Img/worldMap.png"
         Component.onCompleted:
         {
             commander.askWorldMap()
+            var component=Qt.createComponent("chunk.qml")
             for(i=0;i<10;i++)
             {
                 for(j=0;j<10;j++)
                 {
-                    //commander.getChunkColor(i,j)
+                    var object = component.createObject(worldMap,{line:i,cross:j});
                 }
             }
         }
@@ -55,5 +56,4 @@ Item
             }
         }
     }
-    //MouseArea{anchors.fill: parent}
 }

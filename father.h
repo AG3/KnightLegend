@@ -17,6 +17,7 @@ public:
     QStringList msgList;
     QQmlContext *ctxt;
     QTcpSocket *client;
+    QString ID;
 
     int mapColor[256][256],mapPlayer[256][256];
     int msgCount;
@@ -28,6 +29,7 @@ public slots:
     int getMsgCount();
     int getChunkColor(int x,int y);
     int getChunkUID(int x,int y);
+    void login(QString cmd);
 
 private:
 

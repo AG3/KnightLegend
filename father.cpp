@@ -61,7 +61,3 @@ int father::getChunkUID(int x, int y)
 {
     return mapPlayer[x][y];
 }
-void father::login(QString cmd)
-{
-    //
-}

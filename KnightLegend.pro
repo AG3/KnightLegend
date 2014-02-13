@@ -8,7 +8,8 @@ QML_IMPORT_PATH =
 QT+=widgets quick qml network
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
-    father.cpp
+    father.cpp \
+    identeuser.cpp
 
 # Installation path
 # target.path =
@@ -25,4 +26,5 @@ RESOURCES += \
     src.qrc
 
 HEADERS += \
-    father.h
+    father.h \
+    identeuser.h

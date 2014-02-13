@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import "./"
-Item
+Rectangle
 {
     width: fwidth
     height: senceHeight
@@ -9,6 +9,7 @@ Item
     property int oldy
     property int i
     property int j
+    color:"Transparent"
     Image
     {
         z:1
@@ -17,7 +18,7 @@ Item
         height: fheight*10
         id: worldMap
 
-        source: "../../Img/worldMap.png"
+        //source: "qrc:Img/worldMap.jpg"
         Component.onCompleted:
         {
             commander.askWorldMap()

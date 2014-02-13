@@ -29,7 +29,6 @@ public slots:
     int getMsgCount();
     int getChunkColor(int x,int y);
     int getChunkUID(int x,int y);
-    void login(QString cmd);
 
 private:
 

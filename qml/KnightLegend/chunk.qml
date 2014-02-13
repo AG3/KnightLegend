@@ -14,7 +14,9 @@ Rectangle
         anchors.fill: parent
         onClicked:
         {
+            var component=Qt.createComponent("chunkStatus.qml")
             console.log(chunk.line,chunk.cross)
+            var object = component.createObject(worldMap,{line:line,cross:cross});
         }
     }
     Component.onCompleted:

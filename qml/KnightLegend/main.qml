@@ -97,7 +97,7 @@ Item
         y:sence.y+100
         height: 466
         width: 388
-        color: "transparent"
+        color: "Transparent"
         Image
         {
             anchors.fill: parent

@@ -17,5 +17,6 @@
         <file>Img/mail.png</file>
         <file>Img/mail_down.png</file>
         <file>Img/bg_button.png</file>
+        <file>Img/worldMap.jpg</file>
     </qresource>
 </RCC>

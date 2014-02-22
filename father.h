@@ -2,7 +2,6 @@
 #define FATHER_H
 
 #include <QObject>
-#include "qtquick2applicationviewer.h"
 #include"QQmlContext"
 #include"QStringList"
 #include"QTcpSocket"
